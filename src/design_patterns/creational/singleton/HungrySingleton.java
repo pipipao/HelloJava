@@ -1,2 +1,10 @@
-package design_patterns.creational.singleton;public class HungrySingleton {
+package design_patterns.creational.singleton;
+
+public class HungrySingleton {
+    private static final HungrySingleton instance=new HungrySingleton();
+    private HungrySingleton(){}
+
+    public static HungrySingleton getInstance() {
+        return instance;
+    }
 }
