@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <className>design_patterns.creational.abstract_factory.SpringSkinFactory</className>
+</config>
