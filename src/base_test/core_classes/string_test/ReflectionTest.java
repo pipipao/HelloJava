@@ -3,6 +3,7 @@ package base_test.core_classes.string_test;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.logging.Logger;
 
 public class ReflectionTest {
@@ -40,6 +41,17 @@ public class ReflectionTest {
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void reflectionGetMethodTest() throws Exception{
+        String s="Hello World";
+        Class cls=s.getClass();
+        Method m = cls.getMethod("substring", int.class);
+        String r = (String) m.invoke(s, 6);
+        System.out.println(r);
+
+
     }
 }
 class PersonRef{
