@@ -5,29 +5,40 @@ public class ConcurrentTest {
         Counter c = new Counter();
         System.out.println(c.getCount());
         for (int i = 0; i < 20; i++) {
-            new Thread(new Runnable() {
+            var t=new Thread(new Runnable() {
                 @Override
                 public void run() {
                     c.add(1);
                 }
-            }).start();
+            });
+            t.start();
+            try {
+                t.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         System.out.println(c.getCount());
         for (int i = 0; i < 20; i++) {
-            new Thread(new Runnable() {
+            var t=new Thread(new Runnable() {
                 @Override
                 public void run() {
                     c.dec(1);
                 }
-            }).start();
+            });
+            t.start();
+            try {
+                t.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-        try {
-            Thread.sleep(20);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(20);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
-        System.out.println(c.getCount());
         System.out.println(c.getCount());
 
 
