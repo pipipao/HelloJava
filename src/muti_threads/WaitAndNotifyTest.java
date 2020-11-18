@@ -18,7 +18,7 @@ public class WaitAndNotifyTest {
                             String s=q.getTask();
                             System.out.println("get"+s);
                         }catch (InterruptedException e){
-                            
+
                             System.out.println("Get thread interrupted");
                             return;
 
