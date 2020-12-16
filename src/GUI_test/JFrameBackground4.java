@@ -41,29 +41,29 @@ public class JFrameBackground4 extends JFrame
         jp.setBounds(0,0,image.getIconWidth(),image.getIconHeight());
 
         jl=new JLabel(image);
-//		jl.setBounds(0,0,image.getIconWidth(),image.getIconHeight());
+		jl.setBounds(0,0,image.getIconWidth(),image.getIconHeight());
         jp.add(jl);
 
         //创建一个测试按钮
-        jb=new JButton("测试按钮");
-        jb.setBounds(100,100,100,100);
-
-        JButton jButton = new JButton("???");
+//        jb=new JButton("测试按钮");
+//        jb.setBounds(100,100,100,100);
+//
+//        JButton jButton = new JButton("???");
 //        jButton.setBounds(500,500,100,100);
 
 
         //****************
-        Font font = new Font(Font.DIALOG, Font.BOLD, 80);
-
-        time = new JLabel("00:00:00");
-        time.setBackground(Color.red);
-        time.setBounds(500,500,200,200);
+//        Font font = new Font(Font.DIALOG, Font.BOLD, 80);
+//
+//        time = new JLabel("00:00:00");
+//        time.setBackground(Color.red);
+//        time.setBounds(500,500,200,200);
 
 //        Font metionFont = new Font(Font.DIALOG, Font.BOLD, 300);
 //        metion = new JLabel("莫忘签到");
 
 //        metion.setFont(metionFont);
-        time.setFont(font);
+//        time.setFont(font);
 
         ActionListener actionListener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -75,15 +75,19 @@ public class JFrameBackground4 extends JFrame
         this.getRootPane().registerKeyboardAction(actionListener, "command",
                 KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
                 JComponent.WHEN_IN_FOCUSED_WINDOW);
+
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment()
+                .getDefaultScreenDevice();
+//        gd.setFullScreenWindow(this);
         //***************8
 
         //将jp放到最底层。
         layeredPane.add(jp,JLayeredPane.DEFAULT_LAYER);
-        layeredPane.add(time,JLayeredPane.MODAL_LAYER);
+//        layeredPane.add(time,JLayeredPane.MODAL_LAYER);
 //        layeredPane.add(metion, JLayeredPane.MODAL_LAYER);
         //将jb放到高一层的地方
-        layeredPane.add(jb,JLayeredPane.MODAL_LAYER);
-        layeredPane.add(jButton, JLayeredPane.MODAL_LAYER);
+//        layeredPane.add(jb,JLayeredPane.MODAL_LAYER);
+//        layeredPane.add(jButton, JLayeredPane.MODAL_LAYER);
 
         this.setLayeredPane(layeredPane);
         this.setSize(image.getIconWidth(),image.getIconHeight());
@@ -101,8 +105,8 @@ public class JFrameBackground4 extends JFrame
                 SimpleDateFormat f = new SimpleDateFormat("yyyyMMdd:HHmmss");
                 SimpleDateFormat timeFt = new SimpleDateFormat("HH:mm:ss");
                 System.out.println(f.format(date));
-                this.setTitle(f.format(date));
-                time.setText(timeFt.format(date));
+//                this.setTitle(f.format(date));
+//                time.setText(timeFt.format(date));
             }
         }
         System.exit(0);

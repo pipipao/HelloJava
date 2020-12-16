@@ -10,19 +10,8 @@ import java.util.Date;
 
 public class HelloTimerGUI {
     public static void main(String[] args) {
-//        background();
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                show();
-            }
-        });
-        t.start();
-        try {
-            t.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        background();
+//        show();
 
     }
 
@@ -35,15 +24,15 @@ public class HelloTimerGUI {
         JLabel label=new JLabel(background);
         cp.add("Center", label);
         //**************************
-
-        Font font = new Font(Font.DIALOG, Font.BOLD, 80);
-        JLabel time = new JLabel("00:00:00");
-
-        Font metionFont = new Font(Font.DIALOG, Font.BOLD, 400);
-        JLabel metion = new JLabel("莫忘签到");
-
-        metion.setFont(metionFont);
-        time.setFont(font);
+//
+//        Font font = new Font(Font.DIALOG, Font.BOLD, 80);
+//        JLabel time = new JLabel("00:00:00");
+//
+//        Font metionFont = new Font(Font.DIALOG, Font.BOLD, 400);
+//        JLabel metion = new JLabel("莫忘签到");
+//
+//        metion.setFont(metionFont);
+//        time.setFont(font);
 
         ActionListener actionListener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -63,10 +52,10 @@ public class HelloTimerGUI {
 
 //        jframe.add(fullsButton);
 //        jframe.add(exitButton);
-        mainframe.add(time);
-        mainframe.add(metion);
-        cp.add(time);
-        cp.add(metion);
+//        mainframe.add(time);
+//        mainframe.add(metion);
+//        cp.add(time);
+//        cp.add(metion);
         mainframe.setLayout(new FlowLayout());
         mainframe.pack();
 //        jframe.setSize(400, 300);
@@ -84,7 +73,7 @@ public class HelloTimerGUI {
                 SimpleDateFormat timeFt = new SimpleDateFormat("HH:mm:ss");
                 System.out.println(f.format(date));
 //                mainframe.setTitle(f.format(date));
-                time.setText(timeFt.format(date));
+//                time.setText(timeFt.format(date));
             }
         }
         System.exit(0);
