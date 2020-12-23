@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.test;
 
 public class LeetCode141_Linked_List_Cycle {
 }
